@@ -1,0 +1,70 @@
+
+/* 1.定位的方式
+html body {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.box {
+  position: absolute;
+  box-sizing: border-box;
+  background-color: pink;
+  width: 150px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+} */
+
+/* 2.flex */
+
+/* body {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  box-sizing: border-box;
+  background-color: pink;
+  width: 150px;
+  height: 100px;
+
+} */
+
+
+
+/* 3.js */
+/* html body {
+  height: 100vh;
+  overflow: hidden;
+}
+.box {
+  box-sizing: border-box;
+  background-color: pink;
+  width: 150px;
+  height: 100px;
+} */
+
+
+
+
+/* 4.display:table-cell */
+body {
+  overflow: hidden;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  /* 要求父级有固定宽高 */
+  width: 500px;
+  height: 500px;
+}
+.box {
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: pink;
+  width: 150px;
+  height: 100px;
+} 
