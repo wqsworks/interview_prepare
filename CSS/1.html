@@ -7,12 +7,23 @@
   <title>Document</title>
   <!-- <link rel="stylesheet" href="1.css"> -->
   <style>
-    .child {
+    /* .child {
       width: 0;
       height: 0;
       border-top: 100px solid cyan;
       border-left: 50px solid transparent;
       border-right: 50px solid transparent;
+    } */
+    #demo {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 500px;
+      height: 100px;
+      margin: auto;
+      /* 或者 margin: 0 auto; */
     }
   </style>
 </head>
@@ -34,7 +45,10 @@
     box.style.top = (winH - boxH) / 2 + 'px'
   </script> -->
 
-  <div class="child"></div>
+  <!-- <div class="child"></div> -->
+  <div id="demo">
+    <div>1111s</div>
+  </div>
 </body>
 
 </html>

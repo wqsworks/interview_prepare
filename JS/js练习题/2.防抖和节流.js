@@ -22,14 +22,7 @@
 //   }
 // }
 
-// function sayHi () {
-//   console.log('hello')
-//   console.log(this)
-// }
-// let inp = document.getElementById('inp')
-// // inp.addEventListener('input',
-// //   debounce(sayHi, 500)
-// // )
+
 // inp.addEventListener('input',
 //   throtte(sayHi, 500)
 // )
@@ -38,24 +31,34 @@
 
 
 function debounce (fn, wait) {
-  let timeout = null
-  return function () {
-    clearTimeout(timeout)
-    timeout = setTimeout(() => {
+  let timer = null
+  return function anonymous (params) {
+    if (timer) clearTimeout(timer)
+    if (!timer) {
       fn.apply(this, arguments)
-    },wait)
+    }
+    timer = setTimeout(() => {
+      fn.apply(this, arguments)
+    }, wait)
   }
-}  
+}
+function sayHi () {
+  console.log('hello')
+  console.log(this)
+}
 
-
-
-function throtte (fn,wait) {
-  let activeTime = 0
-  return function () {
-    let time = Date.now()
-    if (time - activeTime > wait) {
+function throtte (fn, wait) {
+  let dataNow = 0
+  return function anonymous () {
+    let now = Date.now()
+    if ((now - dataNow) > wait) {
       fn.apply(this, arguments)
-      activeTime = time
+      dataNow = now
     }
   }
 }
+let better = debounce(sayHi, 1000)
+let nowdo = throtte(sayHi, 1000)
+let inp = document.getElementById('inp')
+// inp.addEventListener('input', better)
+inp.addEventListener('input', nowdo)

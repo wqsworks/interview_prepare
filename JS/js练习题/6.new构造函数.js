@@ -40,4 +40,3 @@ function _new (func, ...args) {
   return obj
 }
 
-
