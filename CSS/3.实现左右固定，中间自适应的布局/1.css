@@ -1,0 +1,19 @@
+.con{
+  height:200px;
+  background:#ccc;
+  margin-bottom:10px;
+}
+.con_l,.con_r{
+  width:200px;
+  height:80%;
+}
+.con_l{
+  background:plum;
+}
+.con_r{
+  background:saddlebrown;
+}
+.con_c{
+  height:100%;
+  background:slateblue;
+}

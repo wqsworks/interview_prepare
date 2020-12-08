@@ -1,0 +1,96 @@
+.con{
+  height:120px;
+  background:pink;
+  margin-bottom:20px;
+  /* display: table; */
+  display: flex;
+  /* position: relative; */
+}
+
+
+/* float+bfc */
+.con_l1{
+  width:200px;
+  height:80%;
+  background:palegreen;
+  float: left;
+}
+.con_r1{
+  height:100%;
+  background:peru;
+  overflow: hidden;
+}
+
+
+
+
+/* float+margin-left 或者是padding-left */
+.con_l2{
+  width:200px;
+  height:80%;
+  background:palegreen;
+  float: left;
+}
+.con_r2{
+  height:100%;
+  background:peru;
+  margin-left: 200px;
+}
+
+/* position */
+.con_l3{
+  width:200px;
+  height:80%;
+  background:palegreen;
+  position: absolute;
+}
+.con_r3{
+  height:100%;
+  background:peru;
+  padding-left: 200px;
+}
+
+
+/*  clac */
+
+.con_l4{
+  width:200px;
+  height:80%;
+  background:palegreen;
+  float: left;
+}
+.con_r4{
+  height:100%;
+  background:peru;
+  float: left;
+  width: calc(100% - 200px);
+}
+
+
+/* table */
+
+.con_l5{
+  width:200px;
+  height:80%;
+  background:palegreen;
+  display: table-cell;
+}
+.con_r5{
+  width: 60%;
+  height:100%;
+  background:peru;
+  display: table-cell;
+}
+
+/* flex */
+.con_l6{
+  width:200px;
+  height:80%;
+  background:palegreen;
+
+}
+.con_r6{
+  height:100%;
+  background:peru;
+  flex: 1;
+}
