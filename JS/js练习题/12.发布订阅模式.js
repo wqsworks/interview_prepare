@@ -91,7 +91,6 @@ class EventContent {
   }
   // 发布事件
   emit (event, ...args) {
-
     if (this.list[event] && this.list[event].length) {
       this.list[event].forEach(fn => {
         fn.call(this, ...args)

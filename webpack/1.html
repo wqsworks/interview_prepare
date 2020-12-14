@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="parentElement">
+    <span id="childElement">foo bar</span>
+  </div>
+
+  <script>
+    //创建一个新的、普通的<span>元素
+    var sp1 = document.createElement("span");
+
+    //插入节点之前，要获得节点的引用
+    var sp2 = document.getElementById("childElement");
+    //获得父节点的引用
+    var parentDiv = sp2.parentNode;
+
+    //在DOM中在sp2之前插入一个新元素
+    parentDiv.insertBefore(sp1, sp2);
+  </script>
+</body>
+
+</html>

@@ -34,10 +34,27 @@ Parent.prototype.getName = function () {
 }
 
 function Child (name, age) {
-  Parent.call(name)
+  Parent.call(this, name)
   this.age = age
 }
 
 function F () { }
 F.prototype = Parent.prototype
 Child.prototype = new F();
+
+function Parent (name) {
+  this.name = name;
+  this.colors = ['red', 'blue', 'green'];
+}
+
+Parent.prototype.getName = function () {
+  console.log(this.name)
+}
+
+function Child (name, ager) {
+  Parent.call(this, name)
+  this.age = age
+}
+function F () { }
+F.prototype = Parent.prototype
+Child.prototype = new F()
