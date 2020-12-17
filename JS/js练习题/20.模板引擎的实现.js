@@ -15,3 +15,15 @@ function render (template, data) {
   }
   return template; // 如果模板没有模板字符串直接返回
 }
+
+function test() {
+  const name = "a";
+  const nameObj = {
+    name: "b",
+    output: () => console.log(this.name)
+  };
+  
+  return nameObj;
+}
+
+test().output();

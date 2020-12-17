@@ -61,11 +61,21 @@ console.log(curryAdd(1, 2, 3))
 // 自己实现版本
 const add = (x, y, z) => x + y + z
 const curry = function (fn, ...args) {
+  console.log(args)
   if (fn.length == args.length) {
     return fn.call(fn, ...args)
   }
   return (...args1) => curry(fn, ...args, ...args1)
 }
 let fn = curry(add)
+console.log(fn)
 
 console.log(fn(1, 2, 3))
+
+const add = (x, y, x) => x + y + z
+const curry = function (fn, ...args) {
+  if (fn.length == args.length) {
+    return fn.call(fn, ...args)
+  }
+  return (...args1) => curry(fn, ...args, ...args1)
+}
