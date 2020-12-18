@@ -195,3 +195,37 @@
 // _ajax.post(url,data,config)
 // _ajax.defaults.xxx = xxx
 // _ajax.interceptors
+//  基于AXIOS发送AJAX请求，返回的结果都是一个PROMISE实例
+//  => ajax请求成功（网络层成功：状态码以2开头）
+//  => PROMISE实例也是成功
+
+axios({
+  url: '/user/list',
+  baseURL: 'http://123.0.0.1:8888',
+  method: 'get',
+  headers: {
+    "Content-Type": "x-www-form-urlencoded"
+  },
+  params: {
+    search: ''
+  },
+  data: {
+
+  }
+})
+axios.interceptors.response.use(response => {
+  // 从服务区取得了数据
+  return response.data
+}, response => {
+  // 从服务器没有获取数据
+  return Promise.reject(response)
+})
+
+axios.interceptors.request.use(config => {
+  // 真实项目中，我们一般会在登录成功后，把从服务器获取的TOKEN信息存储到本地
+  let token = localStorage.getItem('token')
+  if (token) {
+    config.headers['Authorization'] = token
+  }
+  return config
+})
